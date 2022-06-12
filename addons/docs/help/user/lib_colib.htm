@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>colib.ijs</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="../jdoc.css" type="text/css" />
+</head>
+<body><!--top jump start--><a href="lib_compare.htm">&gt;&gt;</a>&nbsp;
+<a href="lib_break.htm">&lt;&lt;</a>&nbsp;
+<a href="../user/contents.htm">Usr</a>&nbsp;
+<a href="../primer/contents.htm">Pri</a>&nbsp;
+<a href="../jforc/contents.htm">JfC</a>&nbsp;
+<a href="../learning/contents.htm">LJ</a>&nbsp;
+<a href="../phrases/contents.htm">Phr</a>&nbsp;
+<a href="../dictionary/contents.htm">Dic</a>&nbsp;
+<a href="../dictionary/vocabul.htm">Voc</a>&nbsp;
+<a href="../dictionary/xmain.htm">!:</a>&nbsp;
+<a href="../index.htm">Help</a>&nbsp;
+User<hr><!--top jump end-->
+<div id="header">
+<h1 class="title">colib.ijs</h1>
+</div>
+<p>This script defines the class/object library and is included in the J standard library. Definitions are loaded into the z locale.</p>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+C
+</td>
+<td>
+<a href="#coclass">coclass</a>, <a href="#cocreate">cocreate</a>, <a href="#cocurrent">cocurrent</a>, <a href="#codestroy">codestroy</a>, <a href="#coerase">coerase</a>, <a href="#cofullname">cofullname</a>, <a href="#coinsert">coinsert</a>, <a href="#coname">coname</a>, <a href="#conames">conames</a>, <a href="#conew">conew</a>, <a href="#conl">conl</a>, <a href="#copath">copath</a>, <a href="#coreset">coreset</a>
+</td>
+</tr>
+</table>
+<hr>
+<table class="rdef">
+<tr>
+<td id="coclass" class="rid">
+coclass
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+set class/object class
+</td>
+</tr>
+<tr>
+<td id="cocreate" class="rid">
+cocreate
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+create object
+</td>
+</tr>
+<tr>
+<td id="cocurrent" class="rid">
+cocurrent
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+set current locale
+</td>
+</tr>
+<tr>
+<td id="codestroy" class="rid">
+codestroy
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+destroy current object
+</td>
+</tr>
+<tr>
+<td id="cofullname" class="rid">
+cofullname
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+return name with locale qualifier
+</td>
+</tr>
+<tr>
+<td id="coname" class="rid">
+coname
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+return current class/object name
+</td>
+</tr>
+<tr>
+<td id="conames" class="rid">
+conames
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+formatted class/object name list
+</td>
+</tr>
+<tr>
+<td id="conew" class="rid">
+conew
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+create object
+</td>
+</tr>
+<tr>
+<td id="copath" class="rid">
+copath
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+set/get class/object path
+</td>
+</tr>
+<tr>
+<td id="coreset" class="rid">
+coreset
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+destroy object locales,
+</td>
+</tr>
+</table>
+<h2 id="coerase" class="hdef">coerase (verb)</h2>
+<p>Erase object.</p>
+<h3>Example</h3>
+<pre><code>coerase &lt;&#39;jzplot&#39;</code></pre>
+<h2 id="coinsert" class="hdef">coinsert (verb)</h2>
+<div style="white-space: pre-line;">adds argument and copath of argument to current path.</div>
+<p>paths are in order of argument, except that z is at the end.</p>
+<h3>Example</h3>
+<pre><code>coinsert &#39;cdir&#39;
+coinsert &#39;cdir pobj&#39;
+coinsert &#39;cdir&#39;;&#39;pobj&#39;</code></pre>
+<h2 id="conl" class="hdef">conl (verb)</h2>
+<p>Return class/object name list.</p>
+<h3>Syntax</h3>
+<pre><code>conl n</code></pre>
+<!--bottom jump start--><hr><a href="lib_compare.htm">&gt;&gt;</a>&nbsp;
+<a href="lib_break.htm">&lt;&lt;</a>&nbsp;
+<a href="../user/contents.htm">Usr</a>&nbsp;
+<a href="../primer/contents.htm">Pri</a>&nbsp;
+<a href="../jforc/contents.htm">JfC</a>&nbsp;
+<a href="../learning/contents.htm">LJ</a>&nbsp;
+<a href="../phrases/contents.htm">Phr</a>&nbsp;
+<a href="../dictionary/contents.htm">Dic</a>&nbsp;
+<a href="../dictionary/vocabul.htm">Voc</a>&nbsp;
+<a href="../dictionary/xmain.htm">!:</a>&nbsp;
+<a href="../index.htm">Help</a>&nbsp;
+User<!--bottom jump end--></body>
+</html>

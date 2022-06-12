@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>dir.ijs</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="../jdoc.css" type="text/css" />
+</head>
+<body><!--top jump start--><a href="lib_dll.htm">&gt;&gt;</a>&nbsp;
+<a href="lib_debug.htm">&lt;&lt;</a>&nbsp;
+<a href="../user/contents.htm">Usr</a>&nbsp;
+<a href="../primer/contents.htm">Pri</a>&nbsp;
+<a href="../jforc/contents.htm">JfC</a>&nbsp;
+<a href="../learning/contents.htm">LJ</a>&nbsp;
+<a href="../phrases/contents.htm">Phr</a>&nbsp;
+<a href="../dictionary/contents.htm">Dic</a>&nbsp;
+<a href="../dictionary/vocabul.htm">Voc</a>&nbsp;
+<a href="../dictionary/xmain.htm">!:</a>&nbsp;
+<a href="../index.htm">Help</a>&nbsp;
+User<hr><!--top jump end-->
+<div id="header">
+<h1 class="title">dir.ijs</h1>
+</div>
+<p>This script defines directory utilities and is included in the J standard library. Definitions are loaded into the z locale.</p>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+D
+</td>
+<td>
+<a href="#dir">dir</a>, <a href="#dircompare">dircompare</a>, <a href="#dircompares">dircompares</a>, <a href="#dirfind">dirfind</a>, <a href="#dirpath">dirpath</a>, <a href="#dirss">dirss</a>, <a href="#dirssrplc">dirssrplc</a>, <a href="#dirtree">dirtree</a>, <a href="#dirused">dirused</a>
+</td>
+</tr>
+</table>
+<hr>
+<table class="rdef">
+<tr>
+<td id="dircompare" class="rid">
+dircompare
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+compare files in directories
+</td>
+</tr>
+<tr>
+<td id="dircompares" class="rid">
+dircompares
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+compare files in directories
+</td>
+</tr>
+<tr>
+<td id="dirss" class="rid">
+dirss
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+directory string search
+</td>
+</tr>
+<tr>
+<td id="dirused" class="rid">
+dirused
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+get count and space of files in directory tree
+</td>
+</tr>
+</table>
+<h2 id="dir" class="hdef">dir (verb)</h2>
+<div style="white-space: pre-line;">y = file specification
+    if empty, defaults to *</div>
+<div style="white-space: pre-line;">x is optional:
+  - if not given, defaults to 'n'
+  - if character, returns a formatted directory,
+      where x is the sort option:
+        d=by date
+        n=by name
+        s=by size
+  - if numeric, there are 1 or 2 elements:
+        0{ 0= list short names
+            1= boxed list of full pathnames
+            2= full directory list
+        1{ 0= filenames only (default)
+            1= include subdirectories</div>
+<div style="white-space: pre-line;">subdirectories are shown first
+filenames are returned in lower case</div>
+<h3>Example</h3>
+<pre><code>dir &#39;&#39;
+1 dir jpath &#39;~system/main/d*.ijs&#39;</code></pre>
+<h2 id="dirfind" class="hdef">dirfind (verb)</h2>
+<p>Find name in directory</p>
+<h3>Syntax</h3>
+<pre><code>string dirfind directory</code></pre>
+<h2 id="dirpath" class="hdef">dirpath (verb)</h2>
+<p>Return directory paths starting from y</p>
+<div style="white-space: pre-line;">Optional x=0 all paths (default)
+           1 non-empty paths (i.e. having files)</div>
+<h3>Example</h3>
+<pre><code>dirpath &#39;examples&#39;</code></pre>
+<h2 id="dirssrplc" class="hdef">dirssrplc (verb)</h2>
+<p>Directory string search and replace.</p>
+<h3>Syntax</h3>
+<pre><code>(old;new) dirssrplc files</code></pre>
+<h3>Example</h3>
+<pre><code>(&#39;old&#39;;&#39;new&#39;) dirssrplc jpath &#39;~system/main/*.ijs&#39;</code></pre>
+<h2 id="dirtree" class="hdef">dirtree (verb)</h2>
+<p>Return filenames in directory tree as boxed matrix</p>
+<p>Optional x is a timestamp to exclude earlier files.</p>
+<p>Each row contains: filename;timestamp;size</p>
+<p>Directory search is recursive through subdirectories</p>
+<p>Filenames are returned in lower case in OSX or Windows</p>
+<p>Ignores hidden directories</p>
+<p>Global <code>DirTreeX_j_</code> (set in session configuration) is a list of directories to exclude from the search. e.g. DirTreeX_j_=: 'cvs' to exclude cvs directories.</p>
+<h3>Example</h3>
+<pre><code>dirtree &#39;&#39;
+dirtree &#39;main&#39;
+dirtree jpath &#39;~system/packages/*.ijs&#39;
+2014 5 23 dirtree &#39;&#39;   - files dated on or after date.</code></pre>
+<!--bottom jump start--><hr><a href="lib_dll.htm">&gt;&gt;</a>&nbsp;
+<a href="lib_debug.htm">&lt;&lt;</a>&nbsp;
+<a href="../user/contents.htm">Usr</a>&nbsp;
+<a href="../primer/contents.htm">Pri</a>&nbsp;
+<a href="../jforc/contents.htm">JfC</a>&nbsp;
+<a href="../learning/contents.htm">LJ</a>&nbsp;
+<a href="../phrases/contents.htm">Phr</a>&nbsp;
+<a href="../dictionary/contents.htm">Dic</a>&nbsp;
+<a href="../dictionary/vocabul.htm">Voc</a>&nbsp;
+<a href="../dictionary/xmain.htm">!:</a>&nbsp;
+<a href="../index.htm">Help</a>&nbsp;
+User<!--bottom jump end--></body>
+</html>

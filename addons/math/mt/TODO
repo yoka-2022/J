@@ -1,0 +1,45 @@
+1. (lacn2,gesc2,latdf,getc2,tgsy2,tgsyl,tgex2,tgexc,tgsen) ->
+   gges
+
+2. (gges,tgsyl) -> [1]
+
+3. hrd.ijs: gghrdxxx: implement blocked generalized
+   Hessenberg reduction [2]
+
+4. ev.ijs: testggev: test ggev_jlapack_ to compare against
+   ggevxxx
+
+5. fix ggevxxx for AB=. 2 0 0 $ 0 abd for (A ,: 0)
+
+6. factorize gqvberr in eq,hrd,pf,qf,tri
+
+7. improve *NB and *NX constants for optimal performance
+
+8. exp.ijs: implement updated algo [3]
+
+9. Sylvester equation solvers:
+   [generalized] {continuous,discrete}-time
+
+10. Lyapunov equation solvers:
+    [generalized] {continuous,discrete}-time
+    for {solution X,Cholesky factor U}
+
+11. Algebraic Riccati equation solvers:
+    [generalized] {continuous,discrete}-time
+
+
+[1] Gerdin, Markus. Computation of a canonical form for
+    linear differential-algebraic equations. Department of
+    Electrical Engineering, Linköping University, 2004.
+    LiTH-ISY-R-2602
+
+[2] Bo Kågström, Daniel Kressner, Enrique S. Quintana-Ortí,
+    and Gregorio Quintana-Ortí. Blocked Algorithms for the
+    Reduction to Hessenberg-Triangular Form Revisited.
+    February 2008. LAPACK Working Note 198
+    http://www.netlib.org/lapack/lawns/downloads/
+
+[3] Awad H. Al-Mohy, Nicholas J. Higham. A New Scaling and
+    Squaring Algorithm for the Matrix Exponential. SIAM J.
+    Matrix Analysis Applications, Vol. 31, No. 3, pp.
+    970-989, 2009.
